@@ -1,0 +1,131 @@
+﻿@model InformationUser
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/AddUser/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/AddUser/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/AddUser/css/style.css">
+    <title>Update User</title>
+</head>
+<body>
+
+
+    <div class="content">
+
+        <div class="container">
+            <div class="row align-items-stretch no-gutters contact-wrap">
+                <div class="col-md-12">
+                    <div class="form h-100">
+                        <h3>Update User</h3>
+                        <form asp-action="UpdateUser" asp-controller="Home" method="post">
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="FullName" class="col-form-label"></label>
+                                    <input asp-for="FullName" type="text" class="form-control" placeholder="Your name">
+                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="Email" class="col-form-label"></label>
+                                    <input asp-for="Email" type="text" class="form-control" placeholder="Your email">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="PhoneNumber" class="col-form-label"></label>
+                                    <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Your Phone number">
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="Salary" class="col-form-label"></label>
+                                    <input asp-for="Salary" type="text" class="form-control" placeholder="Your Salary">
+                                    <span asp-validation-for="Salary" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="Country" class="col-form-label"></label>
+                                    <input asp-for="Country" type="text" class="form-control" placeholder="Your Country">
+                                    <span asp-validation-for="Country" class="text-danger"></span>
+
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="City" class="col-form-label"></label>
+                                    <input asp-for="City" type="text" class="form-control" placeholder="Your City">
+                                    <span asp-validation-for="City" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="Address" class="col-form-label"></label>
+                                    <input asp-for="Address" type="text" class="form-control" placeholder="Your Address">
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="Age" class="col-form-label"></label>
+                                    <input asp-for="Age" type="number" class="form-control" placeholder="Your Age">
+                                    <span asp-validation-for="Age" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="Guender" class="col-form-label"></label>
+                                    <span>
+                                        @Html.DropDownList("Guender",Html.GetEnumSelectList<Guender>(),"--Choose Guender---",new{
+                                        style="font-size:15px; width:70%; border-radius:10px; text-align:center;background-color:pink;font-weight:bold;"
+                                        })
+                                    </span>
+                                    <span asp-validation-for="Guender" class="text-danger"></span>
+
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label asp-for="BirthDate" class="col-form-label"></label>
+                                    <input asp-for="BirthDate" type="date" class="form-control" placeholder="Your Age">
+                                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <input type="submit" value="Save Information" class="btn btn-primary rounded-0 py-2 px-4">
+                                    <span class="submitting"></span>
+                                </div>
+                            </div>
+                        </form>
+                        <a asp-action="DisplayAllUsers" asp-controller="Home" class="btn btn-danger">Cancel</a>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="/AddUser/js/jquery-3.3.1.min.js"></script>
+    <script src="/AddUser/js/popper.min.js"></script>
+    <script src="/AddUser/js/bootstrap.min.js"></script>
+    <script src="/AddUser/js/jquery.validate.min.js"></script>
+    <script src="/AddUser/js/main.js"></script>
+
+</body>
+</html>
